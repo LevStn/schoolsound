@@ -17,9 +17,17 @@ export default function PrivacyPolicy() {
           <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 border border-gray-800">
             {/* Content will be added here */}
             <div className="prose prose-invert max-w-none">
-              <p className="text-gray-300">
+              <p className="text-white">
                 <div
-                  className="prose max-w-none [&_h1]:hidden [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-[#65599e] [&_h2]:mt-8 [&_h2]:mb-6 [&_h2]:pb-2 [&_h2]:border-b-2 [&_h2]:border-[#65599e]/20 [&_p]:text-black [&_p]:leading-relaxed [&_p]:mb-6 [&_ul]:list-none [&_ul]:pl-0 [&_ul]:mb-6 [&_ul]:grid [&_ul]:grid-cols-1 [&_ul]:md:grid-cols-2 [&_ul]:gap-4 [&_li]:mb-3 [&_li]:pl-6 [&_li]:relative [&_li]:before:content-[''] [&_li]:before:absolute [&_li]:before:left-0 [&_li]:before:top-[0.6em] [&_li]:before:h-2 [&_li]:before:w-2 [&_li]:before:bg-[#65599e] [&_li]:before:rounded-full [&_li]:text-black [&_a]:text-[#65599e] [&_a]:font-medium [&_a]:no-underline [&_a]:border-b [&_a]:border-[#65599e]/30 [&_a]:transition-colors [&_a]:hover:border-[#65599e]"
+                  className="prose max-w-none [&_h1]:hidden [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-[#65599e] 
+                  [&_h2]:mt-8 [&_h2]:mb-6 [&_h2]:pb-2
+                   [&_h2]:border-b-2 [&_h2]:border-[#65599e]/20 [&_p]:text-white 
+                   [&_p]:leading-relaxed [&_p]:mb-6 [&_ul]:list-none [&_ul]:pl-0 [&_ul]:mb-6 
+                   [&_ul]:grid [&_ul]:grid-cols-1 [&_ul]:md:grid-cols-2 [&_ul]:gap-4 [&_li]:mb-3 
+                   [&_li]:pl-6 [&_li]:relative [&_li]:before:content-[''] [&_li]:before:absolute [&_li]:before:left-0 
+                   [&_li]:before:top-[0.6em] [&_li]:before:h-2 [&_li]:before:w-2 [&_li]:before:bg-[#65599e]
+                    [&_li]:before:rounded-full [&_li]:text-white [&_a]:text-[#65599e] [&_a]:font-medium
+                     [&_a]:no-underline [&_a]:border-b [&_a]:border-[#65599e]/30 [&_a]:transition-colors [&_a]:hover:border-[#65599e]"
                   dangerouslySetInnerHTML={{
                     __html: `
 At schoolsound (“schoolsound”, "our", "us",
