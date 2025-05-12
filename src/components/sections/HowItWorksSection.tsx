@@ -9,52 +9,62 @@ interface HowItWorksSectionProps {
 const HowItWorksSection = ({
   title = "How does the course work?",
   items = [
-    "Theory in the course is collected in the format of video lessons with lifetime access. During the course, you can watch video lessons at any time convenient for you.",
-    "The practical part of the course takes place in the format of interactive online classes according to the schedule, where you will get answers to all your questions and review of homework assignments in real time.",
-    "Homework assignments on theory and practice will help consolidate new material.",
-    "Notes from all classes with the main points and theses of the course will help remind you of the most important things.",
-    "After completing all homework assignments and scoring above 75% on them, you will receive a physical certificate of successful completion of the course.",
+    "Theory is presented in video lessons with lifetime access.",
+    "Practical lessons are conducted live with real-time",
+    "Homework helps consolidate theoretical and practical material.",
+    "You’ll get structured notes after each lesson.",
+    "Complete all tasks with 75%+ and receive a certificate.",
   ],
-  image = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+  image = "img/2.jpg",
 }: HowItWorksSectionProps) => {
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
-          {/* Image - Left side */}
-          <div className="md:w-2/5 w-full">
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+    <section className="py-16 md:py-24 bg-black relative overflow-hidden">
+      {/* Decorative background blobs */}
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+          <div className="flex flex-col md:flex-row">
+            {/* Image - Left */}
+            <div className="md:w-1/2 h-64 md:h-auto relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10 md:hidden"></div>
               <img
                 src={image}
-                alt="How the course works"
-                className="w-full h-auto object-cover"
+                alt="Course"
+                className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 border-r-0 md:border-r-2 border-teal-400/30"></div>
             </div>
-          </div>
 
-          {/* Content - Right side */}
-          <div className="md:w-3/5 w-full">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
-              {title}
-            </h2>
+            {/* Content - Right */}
+            <div className="md:w-1/2 p-8 md:p-10 lg:p-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-3 h-3 bg-cyan-400 rounded-full animate-pulse"></div>
+                <h2 className="text-2xl md:text-3xl font-bold">
+                  <span className="bg-gradient-to-r from-cyan-400 to-teal-500 text-transparent bg-clip-text">
+                    {title}
+                  </span>
+                </h2>
+              </div>
 
-            <div className="space-y-6">
-              {items.map((item, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center">
-                      <span className="text-primary-foreground text-sm font-medium">
-                        {index + 1}
-                      </span>
-                    </div>
-                  </div>
-                  <p className="text-base md:text-lg text-muted-foreground">
+              <div className="space-y-6">
+                {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative pl-8 text-gray-300 text-base md:text-lg leading-relaxed group"
+                  >
+                    <span className="absolute left-0 top-2 w-3 h-3 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full group-hover:scale-125 transition-transform"></span>
                     {item}
-                  </p>
-                </div>
-              ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* Decorative corner elements */}
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyan-400 rounded-tl-xl"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-teal-500 rounded-tr-xl"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-teal-500 rounded-bl-xl"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-cyan-400 rounded-br-xl"></div>
         </div>
       </div>
     </section>

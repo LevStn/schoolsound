@@ -1,64 +1,66 @@
 import React from "react";
-import CourseCard, { CourseCardProps } from "../CourseCard";
+import CourseCard from "../CourseCard";
 
-interface CoursesSectionProps {
-  title?: string;
-  description?: string;
-  courses?: CourseCardProps[];
-}
+const courses = [
+  {
+    title: "Sound Design Fundamentals",
+    description: "Learn the basics of sound design for various media",
+    price: { original: 179, discounted: 79 },
+    teacher: "N. Marron",
+    image: "img/a1.jpg",
+    availableSeats: 8,
+    installmentAvailable: true,
+    promoText: "Promotion: 40% discount",
+    paymentLink: "#",
+  },
+  {
+    title: "Advanced Audio Production",
+    description: "Master professional audio production techniques",
+    price: { original: 200, discounted: 80 },
+    teacher: "N. Marron",
+    image: "img/a2.jpg",
+    availableSeats: 19,
+    installmentAvailable: true,
+    promoText: "Promotion: 30% discount",
+    paymentLink: "#",
+  },
+  {
+    title: "Music Composition for Media",
+    description: "Create compelling music for film, games, and other media",
+    price: { original: 210, discounted: 90 },
+    teacher: "N. Marron",
+    image: "img/a3.jpg",
+    availableSeats: 12,
+    installmentAvailable: true,
+    promoText: "Promotion: 30% discount",
+    paymentLink: "#",
+  },
+];
 
-const CoursesSection = ({
-  title = "Our Courses",
-  description = "Explore our range of professional audio courses",
-  courses = [
-    {
-      title: "Sound Design Fundamentals",
-      description: "Learn the basics of sound design for various media",
-      price: { original: 17900, discounted: 10740 },
-      teacher: "A. Orlov",
-      image:
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
-      availableSeats: 8,
-      installmentAvailable: true,
-      promoText: "Promotion: 40% discount",
-    },
-    {
-      title: "Advanced Audio Production",
-      description: "Master professional audio production techniques",
-      price: { original: 15500, discounted: 9300 },
-      teacher: "A. Orlov",
-      image:
-        "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80",
-      availableSeats: 19,
-      installmentAvailable: true,
-      promoText: "Promotion: 40% discount",
-    },
-    {
-      title: "Music Composition for Media",
-      description: "Create compelling music for film, games, and other media",
-      price: { original: 19900, discounted: 14925 },
-      teacher: "M. Johnson",
-      image:
-        "https://images.unsplash.com/photo-1619983081563-430f63602796?w=800&q=80",
-      availableSeats: 12,
-      installmentAvailable: true,
-      promoText: "Promotion: 25% discount",
-    },
-  ],
-}: CoursesSectionProps) => {
+const CoursesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            {title}
+    <section
+      className="py-16 md:py-24 bg-black relative overflow-hidden"
+      id="price"
+    >
+      {/* Decorative background blur elements */}
+      <div className="absolute -top-100 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl mix-blend-screen" />
+      <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-teal-500/10 rounded-full filter blur-3xl mix-blend-screen" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <span className="bg-gradient-to-r from-cyan-400 to-teal-500 text-transparent bg-clip-text">
+              Our Courses
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {description}
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Explore a wide range of modern audio production, sound design, and
+            composition courses — from beginner to advanced levels.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {courses.map((course, index) => (
             <CourseCard key={index} {...course} />
           ))}
